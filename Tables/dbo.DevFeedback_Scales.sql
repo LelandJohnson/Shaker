@@ -18,3 +18,5 @@ CREATE TABLE [dbo].[DevFeedback_Scales]
 GO
 ALTER TABLE [dbo].[DevFeedback_Scales] ADD CONSTRAINT [PK_DevFeedback_Scales] PRIMARY KEY CLUSTERED  ([Assessment_ID], [Scale_ID], [Scoring_Version], [Language_Code]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'In a DFR spec sheet, add a new column that just numbers the items for this assessment & scoring version', 'SCHEMA', N'dbo', 'TABLE', N'DevFeedback_Scales', 'COLUMN', N'Scale_ID'
+GO

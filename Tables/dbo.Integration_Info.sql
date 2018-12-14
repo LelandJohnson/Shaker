@@ -7,3 +7,7 @@ CREATE TABLE [dbo].[Integration_Info]
 GO
 ALTER TABLE [dbo].[Integration_Info] ADD CONSTRAINT [PK_Integration_Info] PRIMARY KEY CLUSTERED  ([Integration_System]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'List of people to contact when integration problems occur', 'SCHEMA', N'dbo', 'TABLE', N'Integration_Info', 'COLUMN', N'Contact_Info'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Name of ATS vendor, product or company name', 'SCHEMA', N'dbo', 'TABLE', N'Integration_Info', 'COLUMN', N'Product_Name'
+GO

@@ -17,3 +17,5 @@ CREATE TABLE [dbo].[Applicant_Integration_Data]
 GO
 ALTER TABLE [dbo].[Applicant_Integration_Data] ADD CONSTRAINT [PK_Integration_Details] PRIMARY KEY CLUSTERED  ([Applicant_ID], [Assessment_ID], [Session_ID], [Integration_ID], [Integration_System]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Data about each applicant''s session needed to communicate with 3rd party system', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Integration_Data', NULL, NULL
+GO

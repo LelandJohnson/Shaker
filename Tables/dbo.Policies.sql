@@ -18,3 +18,13 @@ CREATE TABLE [dbo].[Policies]
 GO
 ALTER TABLE [dbo].[Policies] ADD CONSTRAINT [PK_Policies] PRIMARY KEY CLUSTERED  ([Policy_ID]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Number of prev passwords, or 0 if unused', 'SCHEMA', N'dbo', 'TABLE', N'Policies', 'COLUMN', N'Disallow_Prev_Passwords'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Days of inactivity until account locked', 'SCHEMA', N'dbo', 'TABLE', N'Policies', 'COLUMN', N'Max_Account_Inactivity'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Timeout interval, if any', 'SCHEMA', N'dbo', 'TABLE', N'Policies', 'COLUMN', N'Max_Session_Inactivity'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'How long before admin re-login', 'SCHEMA', N'dbo', 'TABLE', N'Policies', 'COLUMN', N'Max_Session_Length'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Indicates active policy in use, in the event of multiple policies in db.', 'SCHEMA', N'dbo', 'TABLE', N'Policies', 'COLUMN', N'Selected_Policy'
+GO

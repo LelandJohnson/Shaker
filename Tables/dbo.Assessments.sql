@@ -18,3 +18,15 @@ ALTER TABLE [dbo].[Assessments] ADD CONSTRAINT [PK_Assessments] PRIMARY KEY CLUS
 GO
 ALTER TABLE [dbo].[Assessments] WITH NOCHECK ADD CONSTRAINT [FK_Assessments_Branding] FOREIGN KEY ([Branding_ID]) REFERENCES [dbo].[Branding] ([Branding_ID])
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Assessment ID, properties and metadata', 'SCHEMA', N'dbo', 'TABLE', N'Assessments', NULL, NULL
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Abbreviation for customer + assessment name', 'SCHEMA', N'dbo', 'TABLE', N'Assessments', 'COLUMN', N'Assessment_Code'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Assessment identifying number within database', 'SCHEMA', N'dbo', 'TABLE', N'Assessments', 'COLUMN', N'Assessment_ID'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'ID of brand/company within database to use in GUI', 'SCHEMA', N'dbo', 'TABLE', N'Assessments', 'COLUMN', N'Branding_ID'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Number of incomplete days/weeks/months/years before forcing new session', 'SCHEMA', N'dbo', 'TABLE', N'Assessments', 'COLUMN', N'Restart_Policy_Months'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Number of days/weeks/months/years before allowing retake', 'SCHEMA', N'dbo', 'TABLE', N'Assessments', 'COLUMN', N'Retake_Policy_Months'
+GO

@@ -14,3 +14,5 @@ ALTER TABLE [dbo].[Dimension_Scores] ADD CONSTRAINT [FK_Dimension_Scores_Applica
 GO
 ALTER TABLE [dbo].[Dimension_Scores] ADD CONSTRAINT [FK_Dimension_Scores_Dimensions] FOREIGN KEY ([Assessment_ID], [Dimension_ID], [Scoring_Version]) REFERENCES [dbo].[Dimensions] ([Assessment_ID], [Dimension_ID], [Scoring_Version])
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Scoring algorithm version.  Allows a renorm to add another dimension', 'SCHEMA', N'dbo', 'TABLE', N'Dimension_Scores', 'COLUMN', N'Scoring_Version'
+GO

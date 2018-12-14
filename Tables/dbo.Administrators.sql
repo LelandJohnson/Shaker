@@ -21,3 +21,5 @@ CREATE TABLE [dbo].[Administrators]
 GO
 ALTER TABLE [dbo].[Administrators] ADD CONSTRAINT [PK_Administrators] PRIMARY KEY CLUSTERED  ([Admin_ID]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Changes and activity logs display initials', 'SCHEMA', N'dbo', 'TABLE', N'Administrators', 'COLUMN', N'Initials'
+GO

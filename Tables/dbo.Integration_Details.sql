@@ -19,3 +19,9 @@ ALTER TABLE [dbo].[Integration_Details] ADD CONSTRAINT [PK_Integration_Receipts]
 GO
 ALTER TABLE [dbo].[Integration_Details] ADD CONSTRAINT [FK_Integration_Details_Applicant_Sessions] FOREIGN KEY ([Applicant_ID], [Assessment_ID], [Session_ID]) REFERENCES [dbo].[Applicant_Sessions] ([Applicant_ID], [Assessment_ID], [Session_ID])
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Copy of packet received, size permitting or periodically purged ', 'SCHEMA', N'dbo', 'TABLE', N'Integration_Details', 'COLUMN', N'Data_Received'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Copy of packet sent, size permitting or periodically purged ', 'SCHEMA', N'dbo', 'TABLE', N'Integration_Details', 'COLUMN', N'Data_Sent'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Applicant / Candidate unique identifier in external system integration', 'SCHEMA', N'dbo', 'TABLE', N'Integration_Details', 'COLUMN', N'External_ID'
+GO

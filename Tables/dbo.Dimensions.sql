@@ -18,3 +18,11 @@ CREATE TABLE [dbo].[Dimensions]
 GO
 ALTER TABLE [dbo].[Dimensions] ADD CONSTRAINT [PK_Dimensions] PRIMARY KEY CLUSTERED  ([Assessment_ID], [Dimension_ID], [Scoring_Version]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Optional shorter name for integration results, column headers', 'SCHEMA', N'dbo', 'TABLE', N'Dimensions', 'COLUMN', N'Dimension_Abbr'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Order displayed on report', 'SCHEMA', N'dbo', 'TABLE', N'Dimensions', 'COLUMN', N'Report_Order'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Scoring algorithm version.  Allows a renorm to add another dimension', 'SCHEMA', N'dbo', 'TABLE', N'Dimensions', 'COLUMN', N'Scoring_Version'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'For foreign languages, use this code to look up translated text', 'SCHEMA', N'dbo', 'TABLE', N'Dimensions', 'COLUMN', N'SymbolTableLookup'
+GO

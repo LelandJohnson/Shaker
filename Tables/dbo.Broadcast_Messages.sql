@@ -10,3 +10,5 @@ CREATE TABLE [dbo].[Broadcast_Messages]
 GO
 ALTER TABLE [dbo].[Broadcast_Messages] ADD CONSTRAINT [PK_Broadcast_Messages] PRIMARY KEY CLUSTERED  ([Message_ID]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Assessment to show message or null for all in database', 'SCHEMA', N'dbo', 'TABLE', N'Broadcast_Messages', 'COLUMN', N'Assessment_ID'
+GO

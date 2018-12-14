@@ -31,3 +31,17 @@ ALTER TABLE [dbo].[Applicant_Sessions] ADD CONSTRAINT [FK_Applicant_Sessions_App
 GO
 ALTER TABLE [dbo].[Applicant_Sessions] ADD CONSTRAINT [FK_Applicant_Sessions_Assessments] FOREIGN KEY ([Assessment_ID]) REFERENCES [dbo].[Assessments] ([Assessment_ID])
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Identifier for special alternative version such as text-only', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Sessions', 'COLUMN', N'Alt_Version'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Date of first bookmark update within vjt', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Sessions', 'COLUMN', N'Applicant_Start_Date'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Final integration status, indicates ok or action required', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Sessions', 'COLUMN', N'Integration_Flag'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'If not us-en, language code of assessment taken (IETF code)', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Sessions', 'COLUMN', N'Language_Code'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Secondary score or various fit flags', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Sessions', 'COLUMN', N'Results_OtherValue1'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Secondary score or various fit flags', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Sessions', 'COLUMN', N'Results_OtherValue2'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Date session created, either when ats posted or user account + session created', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Sessions', 'COLUMN', N'Start_Date'
+GO

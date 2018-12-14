@@ -35,3 +35,9 @@ ALTER TABLE [dbo].[Applicant_Items] ADD CONSTRAINT [PK_Applicant_Items] PRIMARY 
 GO
 ALTER TABLE [dbo].[Applicant_Items] ADD CONSTRAINT [FK_Applicant_Items_Applicant_Item_Types] FOREIGN KEY ([Item_Type]) REFERENCES [dbo].[Applicant_Item_Types] ([Item_Type])
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'For sensitive items, only show the first or last characters and cover the rest', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Items', 'COLUMN', N'Conceal_Display'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Field related to EEOC data collection, non-superuser admins cannot filter by it', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Items', 'COLUMN', N'EEOC'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Free text posted from ATS.  For admin filtering, get list of choices from SELECT DISTINCT rather than Applicant_Item_Choices.', 'SCHEMA', N'dbo', 'TABLE', N'Applicant_Items', 'COLUMN', N'Integration_Posted'
+GO

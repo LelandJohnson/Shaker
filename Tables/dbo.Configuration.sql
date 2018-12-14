@@ -17,3 +17,9 @@ CREATE TABLE [dbo].[Configuration]
 GO
 ALTER TABLE [dbo].[Configuration] ADD CONSTRAINT [PK_Configuration] PRIMARY KEY CLUSTERED  ([Assessment_ID]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'MD5 for backward compatibility, SHA256 more secure, other upon client requirements', 'SCHEMA', N'dbo', 'TABLE', N'Configuration', 'COLUMN', N'ApplicantPW_Hash'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'None/NULL, Required, Optional', 'SCHEMA', N'dbo', 'TABLE', N'Configuration', 'COLUMN', N'RJP_Mode'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Validation, Demo, Active, Inactive, Closed to new applicants', 'SCHEMA', N'dbo', 'TABLE', N'Configuration', 'COLUMN', N'Status'
+GO

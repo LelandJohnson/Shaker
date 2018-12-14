@@ -7,3 +7,7 @@ CREATE TABLE [dbo].[Customers]
 GO
 ALTER TABLE [dbo].[Customers] ADD CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED  ([Customer_ID]) ON [PRIMARY]
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Lookup code in url string', 'SCHEMA', N'dbo', 'TABLE', N'Customers', 'COLUMN', N'Customer_Code'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Customer display name', 'SCHEMA', N'dbo', 'TABLE', N'Customers', 'COLUMN', N'Customer_Name'
+GO
