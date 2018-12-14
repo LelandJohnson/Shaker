@@ -3,7 +3,6 @@ GO
 SET ANSI_NULLS ON
 GO
 
-
 CREATE PROCEDURE [dbo].[sel_measures] (
       @Session_ID tinyint,  
       @Applicant_ID int, 
@@ -15,6 +14,6 @@ CREATE PROCEDURE [dbo].[sel_measures] (
 )
 AS
 SELECT     m.Measure_Name, am.Value as Response
-FROM         dbo.Applicant_Measures_Num am join Measures m on am.Measure_ID = m.Measure_ID
+FROM         dbo.Applicant_Measures_Num am join dbo.Measures m on am.Measure_ID = m.Measure_ID
 WHERE     (am.Session_ID = @Session_ID) AND (am.Applicant_ID = @Applicant_ID) AND (am.Assessment_ID = @Assessment_ID) AND (PATINDEX('%,' + m.Measure_Name+',%', @Measure_Names) > 0)
 GO
