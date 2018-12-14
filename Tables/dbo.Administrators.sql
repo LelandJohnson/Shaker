@@ -15,7 +15,8 @@ CREATE TABLE [dbo].[Administrators]
 [PW_Hist_3] [varchar] (64) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [PW_Hist_4] [varchar] (64) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Locked_Until_Date] [datetime] NULL,
-[Creation_Date] [datetime] NULL
+[Creation_Date] [datetime] NULL,
+[jlj_new column] [nchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Administrators] ADD CONSTRAINT [PK_Administrators] PRIMARY KEY CLUSTERED  ([Admin_ID]) ON [PRIMARY]
